@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>기말고사2번</title>
+	<script>
+		function drawImage(obj) {
+			var che=document.getElementsByName("c");
+			var imgnum=f.s.value;
+
+			if(obj.checked) {
+				f.img.src=obj.value;
+			}
+			else {
+				for(var i=0;i<che.length; i++) {
+					if(che[i].checked) {
+						imgnum=che[i].value;
+					}
+				}
+				f.img.src=imgnum;
+			}
+		}
+	</script>
+</head>
+<body onload="f.img.src=f.s.value;">
+<h3>다음 과일 목록을 체크하면 해당하는 그림이 나타납니다 (중복선택 가능)<br>
+체크박스를 해제하면 해당하는 그림은 사라집니다.</h3>
+<form name='f'>
+	
+		<input type="checkbox" name="s" value="apple.png"
+		onclick="drawImage(this)">사과<br>
+		<input type="checkbox" name="s" value="banana.png"
+		onclick="drawImage(this)">바나나<br>
+		<input type="checkbox" name="s" value="mango.png"
+		onclick="drawImage(this)">망고<br>
+		<img name="img"src=''>
+	</form>
+</body>
+</html>
